@@ -3,6 +3,7 @@
 from sense_hat import SenseHat 
 import time 
 import sys
+from os import system, name
 
 sense = SenseHat()
 sense.clear()
