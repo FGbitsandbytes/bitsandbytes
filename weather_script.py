@@ -22,5 +22,6 @@ try:
             	print("Pressure:",pressure)
 
 		time.sleep(1)
+		system('clear')
 except KeyboardInterrupt:
 	pass	
