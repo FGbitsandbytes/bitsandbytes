@@ -22,7 +22,14 @@ try:
             	pressure = round(pressure, 1)
             	print("Pressure:",pressure)
 
+		#added line in Fork
+		sense.show_message("Temperature C:" + str(temp) + "Humidity:" + str(humidity) + "Pressure:" + str(pressure), scroll_speed=(0.08), back_color=[0,0,200])
+		#end addition
 		time.sleep(1)
 		system('clear')
 except KeyboardInterrupt:
-	pass	
+	pass
+
+#added line in Fork
+sense.clear()
+#end addition
