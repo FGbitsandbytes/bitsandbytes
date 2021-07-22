@@ -8,7 +8,7 @@ from ISStreamer.Streamer import Streamer
 from os import system, name
 
 #sense = SenseHat()
-logger = Streamer(bucket_name="Raspberry Pi 3B+ monitor", access_key="ist_nQKa6p-JBRWjZd0h1IIL6xvyOi5cSfeT")
+logger = Streamer(bucket_name="Raspberry Pi 3B+ monitor",bucket_key="5530f421-ad68-410c-a3ae-4b0d8ca09603" ,access_key="ist_nQKa6p-JBRWjZd0h1IIL6xvyOi5cSfeT")
 #sense.clear()
 
 try:
