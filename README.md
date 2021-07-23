@@ -7,3 +7,4 @@ first repo
 #tomorrow it will arrive, the dashboard is made with lbartuzi@glovia.com account 
 
 #PI monitoring dashboard available via link: https://go.init.st/2sumptw
+#Weather dashboard using API from open weather: https://go.init.st/9pxruu9
