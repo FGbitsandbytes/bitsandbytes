@@ -7,10 +7,10 @@ from os import system, name
 #Since the hat should be delivered by UPS and they missed me
 #I've decided to utilize an external weather API to feed the data to out API.
 
-api_key = "d1d94c09e3dfb8e2e3cdbc0c8ad85a00"
+api_key = "yourAPI"
 city = "Eindhoven"
 url = "https://api.openweathermap.org/data/2.5/weather?q=%s&appid=%s&units=metric" % (city, api_key)
-logger = Streamer(bucket_name="Weather Data", bucket_key="d40979dc-2fe8-402c-94b9-76f0727c4c16", access_key="ist_mn7UAdh6xjknCMuT6JDE2P4gCVhI72pq")
+logger = Streamer(bucket_name="Weather Data", bucket_key="bucket key", access_key="access key")
 
 
 try:
