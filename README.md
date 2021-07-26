@@ -8,3 +8,6 @@ first repo
 
 #PI monitoring dashboard available via link: https://go.init.st/2sumptw
 #Weather dashboard using API from open weather: https://go.init.st/9pxruu9
+
+#Sens Hat arrived. Therefore another dashboard created. https://go.init.st/90g03j9
+
