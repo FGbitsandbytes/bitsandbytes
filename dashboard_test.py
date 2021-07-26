@@ -16,19 +16,19 @@ try:
 		cpu = CPUTemperature()
 		#temp = sense.get_temperature()
 		#temp = round(temp, 1)
-		print("Temperature CPU",cpu.temperature)
+		#print("Temperature CPU",cpu.temperature)
 		logger.log("Temperature CPU",cpu.temperature)
 
 		#humidity = sense.get_humidity()
             	#humidity = round(humidity, 1)  
 		load = LoadAverage()
-            	print("CPU Load :",load.load_average)  
+            	#print("CPU Load :",load.load_average)  
 		logger.log("CPU Load :",load.load_average)
 
             	#pressure = sense.get_pressure()
             	#pressure = round(pressure, 1)
 		disk = DiskUsage()
-            	print("DiskUsage",disk.usage)
+            	#print("DiskUsage",disk.usage)
 		logger.log("DiskUsage",disk.usage)
 
 		#added line in Fork
