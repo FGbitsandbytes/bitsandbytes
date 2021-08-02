@@ -7,7 +7,7 @@ from os import system, name
 from ISStreamer.Streamer import Streamer
 
 sense = SenseHat()
-logger = Streamer(bucket_name="Sense Hat Sensor Data", access_key="ist_07z-dw6EXikEpZtO8wo46IPiZUb5T7U7")
+logger = Streamer(bucket_name="Sense Hat Sensor Data", access_key="ist_07z-dw6EXikEpZtO8wo46IPiZUb5T7U7", bucket_key="e3db7268-d7f1-446d-8e7f-3207937fdab3")
 sense.clear()
 
 try:
