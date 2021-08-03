@@ -11,3 +11,6 @@ first repo
 
 #Sens Hat arrived. Therefore another dashboard created. https://go.init.st/90g03j9
 
+#links will not work any more. The associated account has been deleted.
+#New links will follow when I will manage to get it working 4 3
+
