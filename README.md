@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # bitsandbytes
 first repo
 
@@ -14,3 +15,12 @@ first repo
 #links will not work any more. The associated account has been deleted.
 #New links will follow when I will manage to get it working 4 3
 
+=======
+BitsAndBytes
+============
+
+### About
+
+This is your project's README.md file. It helps users understand what your
+project does, how to use it and anything else they may need to know.
+>>>>>>> parent of 0c27c59... Revert "Create project"
