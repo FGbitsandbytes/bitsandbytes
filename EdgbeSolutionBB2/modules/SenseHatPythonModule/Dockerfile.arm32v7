@@ -1,0 +1,41 @@
+
+#FROM arm32v7/python:3.7-slim-buster
+#
+#WORKDIR /app
+#
+#COPY requirements.txt ./
+#RUN apt-get update && \
+#    apt-get install -y --no-install-recommends libboost-python1.67-dev python3-pip libpython3-dev && \
+#    apt-get install sense-hat
+#
+#RUN pip3 install --upgrade pip 
+#RUN pip install --upgrade setuptools 
+#COPY requirements.txt ./
+#RUN pip install -r requirements.txt
+#RUN useradd -ms /bin/bash moduleuser
+#USER moduleuser
+#
+#COPY . .
+#
+#CMD [ "python3", "-u", "./main.py" ]
+
+FROM resin/raspberrypi3-debian:stretch
+
+WORKDIR /app
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends libboost-python1.62.0 python3-pip libpython3-dev && \
+    apt-get install sense-hat && \
+    rm -rf /var/lib/apt/lists/* 
+
+RUN pip3 install --upgrade pip 
+RUN pip install --upgrade setuptools 
+COPY requirements.txt ./
+RUN pip install -r requirements.txt
+
+COPY . .
+
+#RUN useradd -ms /bin/bash moduleuser
+#USER moduleuser
+
+ENTRYPOINT [ "python3", "-u", "./main.py" ]
