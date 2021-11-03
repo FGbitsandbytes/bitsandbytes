@@ -11,7 +11,7 @@ import io
 
 
 class TextToSpeech():
-    def __init__(self, azureSpeechServiceKey, voice='en-US-GuyNeural', azureTranslatorServiceKey=None, translateToLanguage=None, enableMemCache=False, enableDiskCache=False):
+    def __init__(self, azureSpeechServiceKey, voice='en-US-JennyNeural', azureTranslatorServiceKey=None, translateToLanguage=None, enableMemCache=False, enableDiskCache=False):
         self.text2Speech = AzureSpeechServices(azureSpeechServiceKey, voice)
         self.translateText = AzureTranslationServices(
             azureTranslatorServiceKey, translateToLanguage)

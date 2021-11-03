@@ -6,15 +6,15 @@ import requests
 import time
 from xml.etree import ElementTree
 
-TOKEN_URL = "https://southeastasia.api.cognitive.microsoft.com/sts/v1.0/issuetoken"
-BASE_URL = "https://southeastasia.tts.speech.microsoft.com/"
+TOKEN_URL = "https://westeurope.api.cognitive.microsoft.com/sts/v1.0/issueToken"
+BASE_URL = "https://westeurope.tts.speech.microsoft.com/"
 TEXT_TO_SPEECH_PATH = "cognitiveservices/v1"
 VOICES_PATH = "cognitiveservices/voices/list"
 
-
 class AzureSpeechServices(object):
+    print("AzureSpeechService Claas invocation!")
     # Short name for 'Microsoft Server Speech Text to Speech Voice (en-US, GuyNeural)'
-    def __init__(self, subscription_key, voice='en-US-GuyNeural'):
+    def __init__(self, subscription_key, voice='en-US-JennyNeural'):
         self.subscription_key = subscription_key
         self.short_voice_name = voice
         self.access_token = None
@@ -27,7 +27,7 @@ class AzureSpeechServices(object):
 
         If time is less than 10 minutes then use the cached token
         '''
-
+        print("Trying to get the f...q token!")
         try:
             if self.subscription_key is None:
                 return
@@ -77,9 +77,10 @@ class AzureSpeechServices(object):
         headers = {
             'Authorization': 'Bearer ' + self.access_token,
             'Content-Type': 'application/ssml+xml',
-            'X-Microsoft-OutputFormat': 'riff-16khz-16bit-mono-pcm',
-            'User-Agent': 'YOUR_RESOURCE_NAME'
+            'X-Microsoft-OutputFormat': 'riff-24khz-16bit-mono-pcm'#,
+            #'User-Agent': 'sp-BBP19-dev-01'
         }
+
         xml_body = ElementTree.Element('speak', version='1.0')
         xml_body.set('{http://www.w3.org/XML/1998/namespace}lang', 'en-us')
         voice = ElementTree.SubElement(xml_body, 'voice')
@@ -87,7 +88,7 @@ class AzureSpeechServices(object):
         voice.set('name', self.short_voice_name)
         voice.text = text
         body = ElementTree.tostring(xml_body)
-
+        
         response = requests.post(constructed_url, headers=headers, data=body)
 
         if response.status_code == 200:
