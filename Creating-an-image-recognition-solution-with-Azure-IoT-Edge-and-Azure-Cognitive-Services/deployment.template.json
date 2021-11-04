@@ -67,8 +67,8 @@
               "createOptions": {
                 "Env": [
                   "Video=0",
-                  "BingKey=8e6afb90b733449493dd27bd5e4b11a6",
-                  "azureSpeechServicesKey=8e6afb90b733449493dd27bd5e4b11a6",
+                  "BingKey=token",
+                  "azureSpeechServicesKey=token",
                   "AiEndpoint=http://image-classifier-service:80/image",
                   "SpeechMapFilename=speech_map_australian.json"
                 ],
