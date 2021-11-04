@@ -6,6 +6,7 @@ import requests
 import time
 from xml.etree import ElementTree
 
+
 TOKEN_URL = "https://westeurope.api.cognitive.microsoft.com/sts/v1.0/issueToken"
 BASE_URL = "https://westeurope.tts.speech.microsoft.com/"
 TEXT_TO_SPEECH_PATH = "cognitiveservices/v1"
@@ -28,6 +29,7 @@ class AzureSpeechServices(object):
         If time is less than 10 minutes then use the cached token
         '''
         print("Trying to get the f...q token!")
+
         try:
             if self.subscription_key is None:
                 return
@@ -88,7 +90,6 @@ class AzureSpeechServices(object):
         voice.set('name', self.short_voice_name)
         voice.text = text
         body = ElementTree.tostring(xml_body)
-        
         response = requests.post(constructed_url, headers=headers, data=body)
 
         if response.status_code == 200:

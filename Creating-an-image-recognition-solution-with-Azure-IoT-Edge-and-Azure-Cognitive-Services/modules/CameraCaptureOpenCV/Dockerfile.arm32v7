@@ -1,3 +1,4 @@
+
 # FROM balenalib/raspberrypi3:stretch
 # FROM resin/raspberrypi3-debian:stretch
 # FROM sensehatbbcontainerregistry.azurecr.io/sensehatpythonmodule:0.1.0-arm32v7
@@ -20,7 +21,6 @@ RUN apt-get update &&  apt-get install -y --no-install-recommends  \
 RUN export PIP_DEFAULT_TIMEOUT=100 
 RUN pip3 install --upgrade setuptools && pip3 install --upgrade pip 
 RUN pip3 install azure-iothub-device-client opencv-contrib-python requests ptvsd requests pyaudio wave 
-# RUN pip3 install azure-iot-device opencv-contrib-python requests ptvsd requests pyaudio wave 
 
 # Raspberry Kernel 4.19 Sound Issues - Stretch and Buster
 # Kernel 4.19 Sound & latest updates... https://www.raspberrypi.org/forums/viewtopic.php?t=241814
@@ -32,6 +32,7 @@ WORKDIR /app
 COPY /app/*.py ./
 COPY /alsa/*.* /etc/
 
+
 # disable python buffering to console out (https://docs.python.org/2/using/cmdline.html#envvar-PYTHONUNBUFFERED)
 ENV PYTHONUNBUFFERED=1
 
@@ -42,3 +43,4 @@ RUN [ "cross-build-end" ]
 # CMD [ "python3", "iotedge_camera.py" ]
 ENTRYPOINT [ "python3", "iotedge_camera.py" ]
 # ENTRYPOINT [ "python3" , "azure_text_speech.py" ]
+
