@@ -1,5 +1,6 @@
 ﻿FROM balenalib/raspberrypi3:stretch
 
+
 # Enable cross building of ARM on x64 hardware, Remove this and the cross-build-end if building on ARM hardware.
 RUN [ "cross-build-start" ]
 
@@ -30,6 +31,8 @@ RUN pip3 install pillow
 RUN pip3 install numpy
 RUN pip3 install flask
 RUN pip3 install tensorflow
+RUN apt update && apt install -y libgl1-mesa-glx
+
 
 # Add the application
 ADD app /app

@@ -1,7 +1,10 @@
 wheel
 opencv-contrib-python
 # numpy
-azure-iothub-device-client==1.4.0
+
+#azure-iothub-device-client==1.4.0
+azure-iot-device~=2.7.0
+
 requests 
 ptvsd
 pyaudio 

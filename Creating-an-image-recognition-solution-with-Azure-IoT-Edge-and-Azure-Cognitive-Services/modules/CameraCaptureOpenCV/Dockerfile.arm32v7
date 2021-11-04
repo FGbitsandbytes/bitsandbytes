@@ -1,4 +1,9 @@
-FROM balenalib/raspberrypi3:stretch
+
+# FROM balenalib/raspberrypi3:stretch
+# FROM resin/raspberrypi3-debian:stretch
+# FROM sensehatbbcontainerregistry.azurecr.io/sensehatpythonmodule:0.1.0-arm32v7
+FROM bartuzisolutions/bits-and-bytes:0.0.7-dev-arm32v7
+
 
 # Enable cross building of ARM on x64 hardware, Remove this and the cross-build-end if building on ARM hardware.
 RUN [ "cross-build-start" ]
@@ -8,7 +13,7 @@ RUN apt-get update &&  apt-get install -y --no-install-recommends  \
     libatlas3-base libsz2 libharfbuzz0b libtiff5 libjasper1 libilmbase12 \
     libopenexr22 libilmbase12 libgstreamer1.0-0 libavcodec57 libavformat57 \
     libavutil55 libswscale4 libqtgui4 libqt4-test libqtcore4 \
-    libboost-python-dev python3-pip git wget \
+    libboost-python-dev python3-pip git wget alsa-utils \
     python3-numpy build-essential libhdf5-100 portaudio19-dev   \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get -y autoremove
@@ -25,6 +30,8 @@ ENV PA_ALSA_PLUGHW=1
 WORKDIR /app
 
 COPY /app/*.py ./
+COPY /alsa/*.* /etc/
+
 
 # disable python buffering to console out (https://docs.python.org/2/using/cmdline.html#envvar-PYTHONUNBUFFERED)
 ENV PYTHONUNBUFFERED=1
@@ -33,4 +40,7 @@ EXPOSE 5678
 
 RUN [ "cross-build-end" ]
 
+# CMD [ "python3", "iotedge_camera.py" ]
 ENTRYPOINT [ "python3", "iotedge_camera.py" ]
+# ENTRYPOINT [ "python3" , "azure_text_speech.py" ]
+
